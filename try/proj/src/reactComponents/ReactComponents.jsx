@@ -1,7 +1,7 @@
 import React from "react";
 
 const ReactComponent = (props) => {
-    const dataobj = props.data
+  const dataobj = props.data
 
   return (
     <div>
