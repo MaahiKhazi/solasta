@@ -3,8 +3,6 @@ import { useState, useEffect } from 'react'
 import { GoogleGenerativeAI } from '@google/generative-ai'
 import ReactComponent from '../reactComponents/ReactComponents';
 import Loading from "../reactComponents/Loading"
-import Header from "../reactComponents/Header"
-import Footer from '../reactComponents/Footer';
 
 const genAI = new GoogleGenerativeAI("AIzaSyDuNTuGXba6sBd5VjXxOG3ldEHrbDRf_L0");
 

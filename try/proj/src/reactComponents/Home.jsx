@@ -26,7 +26,7 @@ const Home = () => {
           </Link>
 
           <p className="text-center text-gray-500 dark:text-gray-400 max-w-3xl">
-            By Continuing you agree to OpenAI and its API{" "}
+            By Continuing you agree to Google Gemini and its API{" "}
             <a
               href="https://openai.com/policies/terms-of-use"
               className="text-blue-500"
