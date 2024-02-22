@@ -9,7 +9,6 @@ const ReactComponent = (props) => {
         <div>
             <div className=" flex justify-center " key={index}>
                 <div className=" flex flex-wrap gap-3 rounded-md px-3 py-3 justify-center text-3xl bg-gray-400 ">{path.title}</div>
-                
             </div>
             <div>
               {path.links.map((linkpath, ind)=>(
