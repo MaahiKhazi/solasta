@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { GoogleGenerativeAI } from '@google/generative-ai'
-
+import ReactComponent from './reactComponents/ReactComponents';
 
 const genAI = new GoogleGenerativeAI("AIzaSyDuNTuGXba6sBd5VjXxOG3ldEHrbDRf_L0");
 
@@ -44,26 +44,31 @@ function App() {
             if (paths[4] === "J" || paths[4] === "j"){
               const modpaths = paths.slice(8, -3)
               console.log(modpaths)
-              setPosts(modpaths);
+              const finaldata = JSON.parse(modpaths)
+              setPosts(finaldata);
             }
             else if(paths[4] === "S" || paths[4] === "s"){
               const modpaths = paths.slice(7, -3)
               console.log(modpaths)
-              setPosts(modpaths);              
+              const finaldata = JSON.parse(modpaths)
+              setPosts(finaldata);              
             }
             else if(paths[4] === "O" || paths[4] === "o"){
               const modpaths = paths.slice(6, -3)
               console.log(modpaths)
-              setPosts(modpaths);
+              const finaldata = JSON.parse(modpaths)
+              setPosts(finaldata);
             }
             else if(paths[4] === "N" || paths[4] === "n"){
               const modpaths = paths.slice(5, -3)
               console.log(modpaths)
-              setPosts(modpaths);
+              const finaldata = JSON.parse(modpaths)
+              setPosts(finaldata);
             }
             else{
               const mpaths = paths.slice(3, -3)
-              setPosts(mpaths);
+              const finaldata = JSON.parse(mpaths)
+              setPosts(finaldata);
             }
           } else {
             console.error("Invalid JSON structure in the response");
@@ -83,11 +88,9 @@ function App() {
         {loading ? ( 
               <h4>Loading...</h4> 
           ):( 
-            <h4>
-              {posts.paths.map((path) => (
-                <h1>path.title</h1>
-              ))}
-            </h4>
+            <div>
+              <ReactComponent data={posts}/>
+            </div>
           )} 
       </div>
     </div>
