@@ -17,7 +17,7 @@ const AiServices = () => {
 
             const model = genAI.getGenerativeModel({ model: "gemini-pro"});
 
-            const prompt = 'Give me the JSON for an array object called "paths" containing 3 learning paths that suggest user for learning new programming skills which are related to what he knows. Paths should be in the form of objects which have title, description and skills (new or old) as keys. The user knows ReactJs, Node.js, JavaScript, Python, C, C++ language(s) do not add any extra text other than the JSON object.'
+            const prompt = 'Give me the JSON for an array object called "paths" containing 3 learning paths that suggest user for learning new programming skills which are related to what he knows. Paths should be in the form of objects which have title, description and skills (new or old),array of three or more links to learn those skills as keys. The user knows ReactJs, Node.js, JavaScript, Python, C, C++ language(s) do not add any extra text other than the JSON object.'
 
             const result = await model.generateContent(prompt);
             const response = await result.response;
@@ -59,7 +59,7 @@ const AiServices = () => {
 
         loadPost(); 
     }, []);
-
+    console.log(posts)
     return (
         <div>
         {loading ? ( 
