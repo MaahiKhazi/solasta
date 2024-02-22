@@ -1,9 +1,9 @@
 import React from 'react'
 import { useRef } from "react";
-import { useRoutes } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Form = () => {
-    // const router = useRoutes();
+    const navigate = useNavigate();
     const languageInputRef = useRef(null);
     const frameworkInputRef = useRef(null);
 
@@ -19,7 +19,7 @@ const Form = () => {
             })
         );
 
-        router.push("/result");
+        navigate("/result");
     }
     return (
         <main

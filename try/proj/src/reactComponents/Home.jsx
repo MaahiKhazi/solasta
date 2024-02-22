@@ -19,7 +19,7 @@ const Home = () => {
           </p>
 
           <Link
-            href="/getting-started"
+            to={"/form"}
             className="px-12 py-4 rounded-lg text-white dark:text-black bg-black dark:bg-white hover:bg-neutral-800 dark:hover:bg-gray-200 font-bold active:scale-[0.98] active:duration-200 transition"
           >
             Lets Go!

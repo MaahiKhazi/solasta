@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <header className="max-w-7xl mx-auto  px-8 sm:px-16 w-screen h-24 flex items-center justify-between">
-      <Link
-        href={"/"}
+      <Link 
+        to={"/"}
         className="font-bold text-xl text-gray-800 dark:text-gray-200"
       >
         Personalized Paths
