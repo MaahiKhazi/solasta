@@ -4,19 +4,19 @@ import { GoogleGenerativeAI } from '@google/generative-ai'
 
 const genAI = new GoogleGenerativeAI("AIzaSyDuNTuGXba6sBd5VjXxOG3ldEHrbDRf_L0");
 
-async function run() {
-  // For text-only input, use the gemini-pro model
+// async function run() {
+//   // For text-only input, use the gemini-pro model
   
-  const model = genAI.getGenerativeModel({ model: "gemini-pro"});
+//   const model = genAI.getGenerativeModel({ model: "gemini-pro"});
 
-  const prompt = 'Give me the JSON for an array object called "paths" containing 10 learning paths that suggest user for learning new programming skills which are related to what he knows. Paths should be in the form of objects which have title, description and skills (new or old) as keys. The user knows ReactJs, Node.js, JavaScript, Python, C, C++ language(s).'
+//   const prompt = 'Give me the JSON for an array object called "paths" containing 10 learning paths that suggest user for learning new programming skills which are related to what he knows. Paths should be in the form of objects which have title, description and skills (new or old) as keys. The user knows ReactJs, Node.js, JavaScript, Python, C, C++ language(s).'
 
-  const result = await model.generateContent(prompt);
-  const response = await result.response;
-  const text = response.text();
-  // console.log(text);
-  return text;
-}
+//   const result = await model.generateContent(prompt);
+//   const response = await result.response;
+//   const text = response.text();
+//   // console.log(text);
+//   return text;
+// }
 
 function App() {
 
@@ -33,7 +33,7 @@ function App() {
           // promise settles and return its result 
           const model = genAI.getGenerativeModel({ model: "gemini-pro"});
 
-          const prompt = 'Give me the JSON for an array object called "paths" containing 10 learning paths that suggest user for learning new programming skills which are related to what he knows. Paths should be in the form of objects which have title, description and skills (new or old) as keys. The user knows ReactJs, Node.js, JavaScript, Python, C, C++ language(s).'
+          const prompt = 'Give me the JSON for an array object called "paths" containing 3 learning paths that suggest user for learning new programming skills which are related to what he knows. Paths should be in the form of objects which have title, description and skills (new or old) as keys. The user knows ReactJs, Node.js, JavaScript, Python, C, C++ language(s) do not add any extra text other than the JSON object.'
 
           const result = await model.generateContent(prompt);
           const response = await result.response;
@@ -41,9 +41,30 @@ function App() {
           const jsonData = JSON.parse(data);
           if (jsonData && jsonData.candidates && jsonData.candidates.length > 0) {
             const paths = jsonData.candidates[0].content.parts[0].text;
-            const mpaths = paths.slice(3, -3)
-            // Now 'paths' contains the JSON string representing the paths
-            setPosts(mpaths);
+            if (paths[4] === "J" || paths[4] === "j"){
+              const modpaths = paths.slice(8, -3)
+              console.log(modpaths)
+              setPosts(modpaths);
+            }
+            else if(paths[4] === "S" || paths[4] === "s"){
+              const modpaths = paths.slice(7, -3)
+              console.log(modpaths)
+              setPosts(modpaths);              
+            }
+            else if(paths[4] === "O" || paths[4] === "o"){
+              const modpaths = paths.slice(6, -3)
+              console.log(modpaths)
+              setPosts(modpaths);
+            }
+            else if(paths[4] === "N" || paths[4] === "n"){
+              const modpaths = paths.slice(5, -3)
+              console.log(modpaths)
+              setPosts(modpaths);
+            }
+            else{
+              const mpaths = paths.slice(3, -3)
+              setPosts(mpaths);
+            }
           } else {
             console.error("Invalid JSON structure in the response");
           }
@@ -62,11 +83,11 @@ function App() {
         {loading ? ( 
               <h4>Loading...</h4> 
           ):( 
-            // posts((item) => ( 
-            //  // Presently we only fetch 
-            //  // title from the API 
-            <h4>{posts}</h4>
-           // )) 
+            <h4>
+              {posts.paths.map((path) => (
+                <h1>path.title</h1>
+              ))}
+            </h4>
           )} 
       </div>
     </div>
