@@ -8,7 +8,7 @@ const Header = () => {
         to={"/"}
         className="font-bold text-xl text-gray-800 dark:text-gray-200"
       >
-        Personalized Paths
+        SkillCraft
       </Link>
       <a
         href="https://github.com/MaahiKhazi/solasta"
