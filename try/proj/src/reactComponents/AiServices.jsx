@@ -18,12 +18,11 @@ const AiServices = () => {
       setLoading(true);
 
       const model = genAI.getGenerativeModel({ model: "gemini-pro" });
-      let prompt = `Give me the JSON for an array object called "paths" containing 3 learning paths that suggest user for learning new programming skills which are related to what he knows. Paths should be in the form of objects which have title, description and skills (new or old), array of three or more links to learn those skills as keys. The user knows ${languages} language(s)`;
+      let prompt = `Give me the JSON for an array object called "paths" containing 10 learning paths that suggest user for learning new skills which are related to what he knows. Paths should be in the form of objects which have title, description and skills (new or old), array of three or more links to learn those skills as keys. The user knows ${languages}`;
 
       if (frameworks) {
         prompt += ` The user knows ${frameworks} frameworks.`;
       }
-
       const result = await model.generateContent(prompt);
       const response = await result.response;
       const data = JSON.stringify(response);
@@ -58,7 +57,6 @@ const AiServices = () => {
       } else {
           console.error("Invalid JSON structure in the response");
       }
-
       setLoading(false);
     };
 
@@ -68,7 +66,6 @@ const AiServices = () => {
   if (loading) {
     return <Loading />;
   }
-
   return (
     <div>
       <ReactComponent data={posts} />
