@@ -11,7 +11,7 @@ const Header = () => {
         Personalized Paths
       </Link>
       <a
-        href="https://github.com/MaahiKhazi/solasta"
+        href="https://github.com/dilpreetsinghaulakh/ai-path-gen"
         target="blank"
         className="flex items-center px-4 pl-5 rounded-lg py-2 text-gray-800 hover:bg-gray-200 dark:text-gray-200 dark:hover:bg-neutral-900 transition-colors"
       >
