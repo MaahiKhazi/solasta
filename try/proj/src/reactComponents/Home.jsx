@@ -28,7 +28,7 @@ const Home = () => {
           <p className="text-center text-gray-500 dark:text-gray-400 max-w-3xl">
             By Continuing you agree to Google Gemini and its API{" "}
             <a
-              href="https://openai.com/policies/terms-of-use"
+              href="https://www.gemini-official.com/pages/terms-conditions"
               className="text-blue-500"
               target="blank"
             >
@@ -36,7 +36,7 @@ const Home = () => {
             </a>{" "}
             and{" "}
             <a
-              href="https://openai.com/policies/privacy-policy"
+              href="https://www.gemini-official.com/pages/privacy-policy"
               className="text-blue-500"
               target="blank"
             >
